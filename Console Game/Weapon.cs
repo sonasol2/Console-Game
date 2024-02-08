@@ -1,6 +1,13 @@
 ﻿using System;
 namespace Console_Game
 {
+	enum RepairWeaponStatus
+	{
+		Broken,
+		Intact,
+		Reparied
+	}
+
 	public class Weapon
 	{
 		string name;
@@ -22,7 +29,10 @@ namespace Console_Game
             damage = unitCount;
         }
 
-
+		void RepairWeaponStatus(RepairWeaponStatus repairWeaponStatus)
+		{ 
+			
+		}
 	}
 }
 

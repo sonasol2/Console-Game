@@ -1,6 +1,13 @@
 ﻿using System;
 namespace Console_Game
 {
+	enum UnitReaction
+	{
+		Agressive,
+		Escape,
+		Calm
+	}
+
 	public class Unit
 	{
 		public string name;
@@ -65,7 +72,7 @@ namespace Console_Game
 		{
 			this.x = x;
 			this.y = y;
-
+			return (x);
 		}
 
         public void GetUnitInfo()

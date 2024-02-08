@@ -1,10 +1,16 @@
 ﻿<Properties StartupConfiguration="{327ABFEA-A455-4249-899E-F13150F57E19}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Console_220Game PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="Console Game/Unit.cs">
     <Files>
       <File FileName="Console Game/Unit.cs" Line="14" Column="26" IsPinned="True" />
-      <File FileName="Console Game/Program.cs" Line="9" Column="1" />
-      <File FileName="Console Game/Player.cs" Line="180" Column="4" />
+      <File FileName="Console Game/Program.cs" />
+      <File FileName="Console Game/Player.cs" />
       <File FileName="Console Game/Weapon.cs" />
     </Files>
     <Pads>
@@ -19,10 +25,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Console_220Game PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

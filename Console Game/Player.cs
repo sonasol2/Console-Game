@@ -2,6 +2,15 @@
 using static Console_Game.Weapon;
 namespace Console_Game
 {
+
+	enum PlayerMove
+    { 
+		Straight,
+		Rght,
+		Left,
+		Back
+    }
+
 	class Player
 	{
 		public string weapon;
@@ -35,36 +44,28 @@ namespace Console_Game
 
 		}
 
-		public void Move()
+		public void MoveCommand()
 		{
 			string[] positionLable = new string[] { "Straight", "Back", "Right", "Left" };
-			Console.WriteLine($"Введие куда хотите пойти: {positionLable[0]}, {positionLable[1]}, {positionLable[2]}, {positionLable[3]}");
-			
+			Console.WriteLine($"Введие куда хотите пойти: {positionLable[0]}, {positionLable[1]}, {positionLable[2]}, {positionLable[3]}");	
 			string move = Console.ReadLine();
-		
-			//Console.WriteLine("Введите сколько шагов хотите пройти.");
-			//int steps = Convert.ToInt32(Console.ReadLine());
-			
+
             switch (move)
 			{
 				case "Straight":
-					this.y += speed;
-					RandomBattle();
+					Move(PlayerMove.Straight);
                     break;
 
 				case "Back":
-					this.y -= speed;
-                    RandomBattle();
+                    Move(PlayerMove.Back);
                     break;
 
 				case "Right":
-					this.x += speed;
-                    RandomBattle();
+					Move(PlayerMove.Rght);
                     break;
 
 				case "Left":
-					this.x -= speed;
-                    RandomBattle();
+                    Move(PlayerMove.Left);
                     break;
 
 				default:
@@ -74,9 +75,31 @@ namespace Console_Game
 
 		}
 
-		public void Fight()
+		public void Move(PlayerMove action)
 		{
-            Unit unit = new Unit();
+			switch (action)
+			{
+				case PlayerMove.Straight:
+                    this.y += speed;
+					break;
+				case PlayerMove.Back:
+                    this.y -= speed;
+					break;
+				case PlayerMove.Rght:
+                    this.x += speed;
+					break;
+				case PlayerMove.Left:
+                    this.x -= speed;
+					break;
+                default:
+					break;
+			}
+            RandomBattle();
+        }
+
+        public void Fight()
+		{
+            Unit unit = new Unit(this.x, this.y);
             unit.GetUnitInfo();
 			for ( ;unit.health > 0 ; )
 			{
@@ -91,6 +114,11 @@ namespace Console_Game
                     case "Dodge":
                         Dodge();
                         break;
+
+					case "Go":
+						MoveCommand();
+						Stalking(unit.Move(this.x, this.y));
+						break;
                 }
 
 				if (unit.death)
@@ -168,6 +196,12 @@ namespace Console_Game
 			Console.WriteLine($"Положение персонажа: ось х:{x}, ось у:{y}. Оружие в инвентаре {weapon}. Текущее здоровье: {health}");
 		}
 
+		public void Stalking(int x)
+		{
+			this.x = x;
+			this.y = y;	
+		}
+
 		public void GameController()
 		{
             Console.WriteLine("Введите команду: 'Go', 'Fight', 'Wait'");
@@ -175,7 +209,7 @@ namespace Console_Game
             switch (command)
 			{
 				case "Go":
-					Move();
+					MoveCommand();
 					break;
 
 				case "Fight":
