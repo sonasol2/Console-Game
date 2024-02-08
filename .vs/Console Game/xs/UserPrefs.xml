@@ -1,28 +1,26 @@
 ﻿<Properties StartupConfiguration="{327ABFEA-A455-4249-899E-F13150F57E19}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Console_220Game PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Console Game/Unit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Console Game/Player.cs">
     <Files>
-      <File FileName="Console Game/Unit.cs" Line="14" Column="26" IsPinned="True" />
-      <File FileName="Console Game/Program.cs" />
-      <File FileName="Console Game/Player.cs" />
-      <File FileName="Console Game/Weapon.cs" />
+      <File FileName="Console Game/Unit.cs" Line="75" Column="15" IsPinned="True" />
+      <File FileName="Console Game/Program.cs" Line="1" Column="1" />
+      <File FileName="Console Game/Player.cs" Line="6" Column="17" />
+      <File FileName="Console Game/Weapon.cs" Line="14" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Console Game" expanded="True">
-            <Node name="Console Game" expanded="True">
-              <Node name="Unit.cs" selected="True" />
-            </Node>
+          <Node name="Console Game">
+            <Node name="Console Game" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
