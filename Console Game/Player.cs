@@ -2,7 +2,7 @@
 using static Console_Game.Weapon;
 namespace Console_Game
 {
-
+    
 	enum PlayerMove
     { 
 		Straight,
@@ -10,46 +10,51 @@ namespace Console_Game
 		Left,
 		Back
     }
+	enum PlayerStatus
+	{ 
+		Live,
+		Death,	
+    }
+	enum FightCommand
+	{ 
+	Hit,
+    Dodge,
+    Leave
+    }
 
 	class Player
 	{
 		public string weapon;
 		private int health = 100;
-		int damage;
+		int damage = 1;
 		int x;
 		int y;
 		int killCounter;
-		int speed;
+		int speed = 5;
+		private PlayerStatus status = PlayerStatus.Live;
 
-		public Player(string newWeapon = "Sword", int startX = 0, int startY = 0)
+		public Player(int startX = -5, int startY = -5)
 		{
-
-			this.weapon = newWeapon;
 			this.x = startX;
 			this.y = startY;
-			speed = 5;
-		}
+			//Inventory();
+            StartGame();
+        }
 
 		public void StartGame()
 		{
-			for (; health > 0;)
+
+			for (; LiveInit() ;)
 			{
 				GetInfo();
-				GameController();
+				PlayerController();
 			}
-		}
-
-		static void GetPosition(int x = 0, int y = 0)
-		{
-
 		}
 
 		public void MoveCommand()
 		{
-			string[] positionLable = new string[] { "Straight", "Back", "Right", "Left" };
-			Console.WriteLine($"Введие куда хотите пойти: {positionLable[0]}, {positionLable[1]}, {positionLable[2]}, {positionLable[3]}");	
+			Console.WriteLine("Введие куда хотите пойти: Straight, Back, Left, Right");	
 			string move = Console.ReadLine();
-
             switch (move)
 			{
 				case "Straight":
@@ -94,41 +99,41 @@ namespace Console_Game
                 default:
 					break;
 			}
-            RandomBattle();
+            //RandomBattle();
         }
 
         public void Fight()
 		{
-            Unit unit = new Unit(this.x, this.y);
-            unit.GetUnitInfo();
-			for ( ;unit.health > 0 ; )
+			Unit unit = new Unit(this.x, this.y);
+			unit.GetUnitInfo();
+			for ( ;unit.InitLive(); )
 			{
-                Console.WriteLine("Введите команду: 'Hit', 'Dodge'");
+                Console.WriteLine("Введите команду: 'Hit', 'Dodge', 'Leave'");
                 string command = Console.ReadLine();
                 switch (command)
                 {
                     case "Hit":
-                        unit.GetDamage(AvalibleWeapon());
+                        unit.GetDamage(DoDamage());
                         break;
 
                     case "Dodge":
                         Dodge();
                         break;
 
-					case "Go":
-						MoveCommand();
-						Stalking(unit.Move(this.x, this.y));
+					case "Leave":
+						Leave(unit);
+						//Stalking(unit.Move(this.x, this.y));
 						break;
                 }
 
-				if (unit.death)
+				if (!unit.InitLive())
 				{
 					Console.WriteLine($"Вы победили противника {unit.name}");
 					killCounter++;
 					return;
 				}
 
-                GetDamage(unit.RandomUnitDamage(), unit.name);
+                GetDamage(unit);
 
             }	
 		}
@@ -144,19 +149,19 @@ namespace Console_Game
             }
 		}
 		
-		public bool GetDamage(int unitDamage, string unitName)
+		public bool GetDamage(Unit unit)
 		{
 
-			if (health - unitDamage <= 0)
+			if (health - unit.damage <= 0)
 			{
-				Console.WriteLine($"Вы получили {unitDamage} единиц урона от {unitName}.");
+				Console.WriteLine($"Вы получили {unit.damage} единиц урона от {unit.name}.");
 				Death();
 				return true;
 			}
-			else if (health - unitDamage > 0)
+			else if (health - unit.damage > 0)
 			{
-				health -= unitDamage;
-				Console.WriteLine($"Вы получили {unitDamage} единиц урона от {unitName}. Ваше здоровье: {health}");
+				health -= unit.damage;
+				Console.WriteLine($"Вы получили {unit.damage} единиц урона от {unit.name}. Ваше здоровье: {health}");
 				return false;
 			}
 			else if (Dodge())
@@ -168,9 +173,10 @@ namespace Console_Game
 
 		}
 
-		public void DoDamage(int a) 
-		{ 
-			
+		public int DoDamage() 
+		{
+            Weapon sword = new Weapon("Health Sword", 10);
+			return damage = sword.damage;
 		}
 
 		public void Death()
@@ -182,29 +188,22 @@ namespace Console_Game
 		public bool Dodge()
 		{
             Random random = new Random();
-            return random.Next(2) == 0? false : true;
+            return random.Next(2) == 0 ? false : true;
         }
 
-		public int AvalibleWeapon()
-		{
-			Weapon sword = new Weapon("Health Sword", 10);
-			return sword.damage;
-		}
+		//public int Inventory()
+		//{	
+		//	//Potions healingPotion = new Potions("Исцеляющее зелье", 30);
+		//}
 
 		public void GetInfo()
 		{
 			Console.WriteLine($"Положение персонажа: ось х:{x}, ось у:{y}. Оружие в инвентаре {weapon}. Текущее здоровье: {health}");
-		}
+		}	
 
-		public void Stalking(int x)
+		public void PlayerController()
 		{
-			this.x = x;
-			this.y = y;	
-		}
-
-		public void GameController()
-		{
-            Console.WriteLine("Введите команду: 'Go', 'Fight', 'Wait'");
+            Console.WriteLine("Введите команду: 'Go', 'Fight', 'Stay'");
             string command = Console.ReadLine();
             switch (command)
 			{
@@ -216,7 +215,7 @@ namespace Console_Game
 					Fight();
 					break;
 
-				case "Wait":
+				case "Stay":
 					GetInfo();
 					break;
             }
@@ -224,6 +223,32 @@ namespace Console_Game
 
         }
 		
+		public void Leave(Unit unit)
+		{
+
+			for (;LiveInit() || unit.InitLive();)
+			{
+			Console.WriteLine("Вы пытаетесь сбежать от противника");
+			MoveCommand();
+			unit.Stalking(this.x, this.y);
+			}
+			
+		}
+
+		public bool LiveInit()
+		{
+			switch (this.status)
+			{
+				case PlayerStatus.Live:
+					return true;
+				case PlayerStatus.Death:
+					return false;
+				default:
+					break;
+			}
+			return true;
+			
+		}
 	}
 }
 

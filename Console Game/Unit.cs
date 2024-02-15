@@ -7,16 +7,22 @@ namespace Console_Game
 		Escape,
 		Calm
 	}
+    enum UnitStatus
+    {
+        Live,
+        Death,
+    }
 
-	public class Unit
+    public class Unit
 	{
 		public string name;
 		public int damage;
 		public int health;
 		public bool death = false;
+		private UnitStatus status = UnitStatus.Live;
 		int x;
 		int y;
-		int speed;
+		int speed = 4;
 
 		public Unit(int playerX, int playerY)
 		{
@@ -64,6 +70,7 @@ namespace Console_Game
 			{
 				Console.WriteLine($"{this.name} погибает");
 				death = true;
+				this.status = UnitStatus.Death;
 			}
 
 		}
@@ -75,11 +82,60 @@ namespace Console_Game
 			return (x);
 		}
 
+        public void Stalking(int x, int y)
+        {
+			int unitPos = this.x + this.y;
+			int playerPos = (x + y)/speed;
+	  
+            int otrezokX = x - this.x;
+			int otrezokY = y - this.y;
+
+			if (otrezokX < otrezokY)
+			{
+				this.x += otrezokX;
+				this.y += otrezokY;
+			} 
+			else if (otrezokY > otrezokX)
+			{
+				this.y += otrezokY;
+				this.x += otrezokX;
+			} else if (otrezokX == otrezokY)
+			{ 
+				
+			}
+
+
+            if (this.x < x) { }
+				
+
+
+
+        }
+
         public void GetUnitInfo()
 		{
 			Console.WriteLine($"Ваш противник: {name}.");
 		}
 
-	}
+		public int DoDamage()
+		{
+			return damage;
+		}
+		
+		public bool InitLive()
+		{
+			switch (this.status)
+			{
+				case UnitStatus.Live:
+					return true;
+				case UnitStatus.Death:
+					return false;
+				default:
+					break;	
+			}
+            return true;
+
+        }
+    }
 }
 

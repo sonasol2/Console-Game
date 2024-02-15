@@ -1,26 +1,29 @@
 ﻿<Properties StartupConfiguration="{327ABFEA-A455-4249-899E-F13150F57E19}|Default">
-  <MonoDevelop.Ide.ItemProperties.Console_220Game PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Console Game/Player.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/sergejpopovic/Projects/Console Game/Console Game/Program.cs" relfile="Console Game/Program.cs" line="12" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Console Game/Goblin.cs">
     <Files>
-      <File FileName="Console Game/Unit.cs" Line="75" Column="15" IsPinned="True" />
-      <File FileName="Console Game/Program.cs" Line="1" Column="1" />
-      <File FileName="Console Game/Player.cs" Line="6" Column="17" />
-      <File FileName="Console Game/Weapon.cs" Line="14" Column="21" />
+      <File FileName="Console Game/Program.cs" Line="12" Column="1" />
+      <File FileName="Console Game/Units.cs" Line="9" Column="28" />
+      <File FileName="Console Game/Goblin.cs" Line="48" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Console Game">
-            <Node name="Console Game" expanded="True" />
+          <Node name="Console Game" expanded="True">
+            <Node name="Console Game">
+              <Node name="Goblin.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Console_220Game PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
