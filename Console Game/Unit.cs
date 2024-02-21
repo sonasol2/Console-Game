@@ -82,35 +82,32 @@ namespace Console_Game
 			return (x);
 		}
 
-        public void Stalking(int x, int y)
-        {
-			int unitPos = this.x + this.y;
-			int playerPos = (x + y)/speed;
+   //     public void Stalking(int x, int y)
+   //     {
+			//int unitPos = this.x + this.y;
+			//int playerPos = (x + y)/speed;
 	  
-            int otrezokX = x - this.x;
-			int otrezokY = y - this.y;
+   //         int otrezokX = x - this.x;
+			//int otrezokY = y - this.y;
 
-			if (otrezokX < otrezokY)
-			{
-				this.x += otrezokX;
-				this.y += otrezokY;
-			} 
-			else if (otrezokY > otrezokX)
-			{
-				this.y += otrezokY;
-				this.x += otrezokX;
-			} else if (otrezokX == otrezokY)
-			{ 
+			//if (otrezokX < otrezokY)
+			//{
+			//	this.x += otrezokX;
+			//	this.y += otrezokY;
+			//} 
+			//else if (otrezokY > otrezokX)
+			//{
+			//	this.y += otrezokY;
+			//	this.x += otrezokX;
+			//} else if (otrezokX == otrezokY)
+			//{ 
 				
-			}
+			//}
 
 
-            if (this.x < x) { }
+            //if (this.x < x) { }
 				
-
-
-
-        }
+        //}
 
         public void GetUnitInfo()
 		{

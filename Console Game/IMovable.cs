@@ -1,34 +1,20 @@
-﻿//using System;
-//namespace Console_Game
-//{
-//	public interface IMove
-//	{
+﻿using System;
+namespace Console_Game
+{
+    public interface IMove
+    {
 
-//        static int speed;
+        static int speed;
+        static int x;
+        static int y;
 
+        public void Move()
+        {
+        }
 
+        delegate void MoveHandler();
 
-//        public void Moves(PlayerMove action)
-//        {
-//            switch (action)
-//            {
-//                case PlayerMove.Straight:
-//                    this.y += speed;
-//                    break;
-//                case PlayerMove.Back:
-//                    this.y -= speed;
-//                    break;
-//                case PlayerMove.Rght:
-//                    this.x += speed;
-//                    break;
-//                case PlayerMove.Left:
-//                    this.x -= speed;
-//                    break;
-//                default:
-//                    break;
-//            }
-//        }
-
-//    }
-//}
+        event MoveHandler MoveEvent;
+    }
+}
 
