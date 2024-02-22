@@ -38,10 +38,10 @@ namespace Console_Game
 			this.x = startX;
 			this.y = startY;
 			//Inventory();
-            StartGame();
+            Live();
         }
 
-		public void StartGame()
+		public void Live()
 		{
 
 			for (; LiveInit() ;)
@@ -207,19 +207,20 @@ namespace Console_Game
 
 		public void PlayerController()
 		{
-            Console.WriteLine("Введите команду: 'Go', 'Fight', 'Stay'");
-            string command = Console.ReadLine();
-            switch (command)
+            Console.WriteLine("Введите команду: 1.'Go', 2.'Fight', 3.'Stay'");
+            string? command = Console.ReadLine();
+			if (int.TryParse(command, out int result))
+            switch (result)
 			{
-				case "Go":
+				case 1:
 					MoveCommand();
 					break;
 
-				case "Fight":
+				case 2:
 					Fight();
 					break;
 
-				case "Stay":
+				case 3:
 					GetInfo();
 					break;
             }

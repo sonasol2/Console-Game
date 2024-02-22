@@ -1,34 +1,33 @@
 ﻿<Properties StartupConfiguration="{327ABFEA-A455-4249-899E-F13150F57E19}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Console_220Game PreferredExecutionTarget="MonoDevelop.Default" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/sergejpopovic/Projects/Console Game/Console Game/Program.cs" relfile="Console Game/Program.cs" line="12" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Console Game/IMovable.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Console Game/Units.cs">
     <Files>
-      <File FileName="Console Game/Program.cs" Line="14" Column="1" />
-      <File FileName="Console Game/Units.cs" Line="24" Column="3" />
-      <File FileName="Console Game/Goblin.cs" Line="28" Column="4" />
-      <File FileName="Console Game/Game.cs" Line="1" Column="1" />
+      <File FileName="Console Game/Program.cs" Line="13" Column="25" />
+      <File FileName="Console Game/Units.cs" Line="23" Column="3" />
+      <File FileName="Console Game/Goblin.cs" />
+      <File FileName="Console Game/Game.cs" Line="46" Column="1" />
       <File FileName="Console Game/Unit.cs" Line="109" Column="5" />
-      <File FileName="Console Game/Potions.cs" Line="1" Column="1" />
+      <File FileName="Console Game/Potions.cs" />
       <File FileName="Console Game/Move.cs" Line="1" Column="1" />
       <File FileName="Console Game/IMovable.cs" Line="16" Column="1" />
+      <File FileName="Console Game/Player.cs" Line="215" Column="12" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Console Game">
             <Node name="Console Game">
-              <Node name="IMovable.cs" selected="True" />
+              <Node name="Units.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
 </Properties>

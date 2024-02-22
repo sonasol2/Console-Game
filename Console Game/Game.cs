@@ -43,6 +43,7 @@ namespace Console_Game
         public void StartGame()
         {
             Player player = new Player(0, 0);
+
         }
 
 
