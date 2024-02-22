@@ -33,7 +33,7 @@ namespace Console_Game
 		int speed = 5;
 		private PlayerStatus status = PlayerStatus.Live;
 
-		public Player(int startX = -5, int startY = -5)
+		public Player(int startX, int startY)
 		{
 			this.x = startX;
 			this.y = startY;
@@ -53,30 +53,34 @@ namespace Console_Game
 
 		public void MoveCommand()
 		{
-			Console.WriteLine("Введие куда хотите пойти: Straight, Back, Left, Right");	
-			string move = Console.ReadLine();
-            switch (move)
+			Console.WriteLine("Выберете куда хотите пойти: 1. Straight, 2. Back, 3. Left, 4. Right");	
+			string? move = Console.ReadLine();
+			if (int.TryParse(move, out int x))
 			{
-				case "Straight":
-					Move(PlayerMove.Straight);
-                    break;
+				switch (x)
+				{
+					case 1:
+						Move(PlayerMove.Straight);
+						break;
 
-				case "Back":
-                    Move(PlayerMove.Back);
-                    break;
+					case 2:
+						Move(PlayerMove.Back);
+						break;
 
-				case "Right":
-					Move(PlayerMove.Rght);
-                    break;
+					case 3:
+						Move(PlayerMove.Rght);
+						break;
 
-				case "Left":
-                    Move(PlayerMove.Left);
-                    break;
+					case 4:
+						Move(PlayerMove.Left);
+						break;
 
-				default:
-					Console.WriteLine("Неизвестная комманда!");
-					break;
+					default:
+						Console.WriteLine("Неизвестная комманда!");
+						break;
+				}
 			}
+			else { Console.WriteLine("Неизвестная команда"); return; }  
 
 		}
 
@@ -121,7 +125,7 @@ namespace Console_Game
                         break;
 
 					case "Leave":
-						Leave(unit);
+						//Leave(unit);
 						//Stalking(unit.Move(this.x, this.y));
 						break;
                 }
@@ -223,17 +227,17 @@ namespace Console_Game
 
         }
 		
-		public void Leave(Unit unit)
-		{
+		//public void Leave(Unit unit)
+		//{
 
-			for (;LiveInit() || unit.InitLive();)
-			{
-			Console.WriteLine("Вы пытаетесь сбежать от противника");
-			MoveCommand();
-			unit.Stalking(this.x, this.y);
-			}
+		//	for (;LiveInit() || unit.InitLive();)
+		//	{
+		//	Console.WriteLine("Вы пытаетесь сбежать от противника");
+		//	MoveCommand();
+		//	unit.Stalking(this.x, this.y);
+		//	}
 			
-		}
+		//}
 
 		public bool LiveInit()
 		{

@@ -42,7 +42,7 @@ namespace Console_Game
 
         public void StartGame()
         {
-            Player player = new Player();
+            Player player = new Player(0, 0);
         }
 
 
@@ -55,6 +55,10 @@ namespace Console_Game
 	    }
         public void CloseGame()
         {
+            Console.Clear();
+            Console.WriteLine("Good bye");
+            Environment.Exit(1);
+
         }
 
     }
