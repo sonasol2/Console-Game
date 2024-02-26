@@ -1,33 +1,34 @@
 ﻿<Properties StartupConfiguration="{327ABFEA-A455-4249-899E-F13150F57E19}|Default">
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Console_220Game PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Console Game/Units.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Console Game/NPC.cs">
     <Files>
-      <File FileName="Console Game/Program.cs" Line="13" Column="25" />
-      <File FileName="Console Game/Units.cs" Line="23" Column="3" />
+      <File FileName="Console Game/Program.cs" />
+      <File FileName="Console Game/Units.cs" />
       <File FileName="Console Game/Goblin.cs" />
-      <File FileName="Console Game/Game.cs" Line="46" Column="1" />
-      <File FileName="Console Game/Unit.cs" Line="109" Column="5" />
+      <File FileName="Console Game/Game.cs" />
+      <File FileName="Console Game/Unit.cs" />
       <File FileName="Console Game/Potions.cs" />
-      <File FileName="Console Game/Move.cs" Line="1" Column="1" />
-      <File FileName="Console Game/IMovable.cs" Line="16" Column="1" />
-      <File FileName="Console Game/Player.cs" Line="215" Column="12" />
+      <File FileName="Console Game/Move.cs" />
+      <File FileName="Console Game/IMovable.cs" />
+      <File FileName="Console Game/Player.cs" />
+      <File FileName="Console Game/NPC.cs" Line="7" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Console Game">
             <Node name="Console Game">
-              <Node name="Units.cs" selected="True" />
+              <Node name="NPC.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
